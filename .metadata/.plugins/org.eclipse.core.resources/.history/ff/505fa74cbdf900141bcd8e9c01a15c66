@@ -169,10 +169,8 @@ __interrupt void cpu_timer2_isr(void)
 	if(current_state != next_state)
 //	if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
 	{
-
 		CTRL_doChangeSinCycleState(ctrlHandle, next_state);
 //			GPIO_toggle(GPIO_LED_BLUE);
-		current_state = next_state;
 	}
 
  	if(current_state == CTRL_SinCycleState_Positive){

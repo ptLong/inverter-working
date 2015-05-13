@@ -272,8 +272,8 @@ void PWM_config_default(volatile struct EPWM_REGS *obj, uint16_t period)
 
 	obj->CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
 	obj->CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;
-	obj->CMPCTL.bit.SHDWAMODE = CC_SHADOW;//CC_IMMEDIATE;
-	obj->CMPCTL.bit.SHDWBMODE = CC_SHADOW;//CC_IMMEDIATE;
+	obj->CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE;
+	obj->CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE;
 
 	obj->AQCTLA.bit.ZRO = AQ_SET;               // PWM toggle high/low
 	obj->AQCTLA.bit.CAU = AQ_CLEAR;

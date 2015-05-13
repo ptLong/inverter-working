@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v6.4.4                      
 ******************************************************************************
->> Linked Wed May 13 14:47:02 2015
+>> Linked Wed May 13 15:15:14 2015
 
 OUTPUT FILE NAME:   <oit-inverter-final.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00000000
@@ -13,9 +13,9 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
-  RAMM0                 00000122   000002de  000002db  00000003  RWIX
-  RAMLS0                00008000   00000800  000007ff  00000001  RWIX
-  RAMLS1                00008800   00000800  0000006c  00000794  RWIX
+  RAMM0                 00000122   000002de  000002dd  00000001  RWIX
+  RAMLS0                00008000   00000800  000007fd  00000003  RWIX
+  RAMLS1                00008800   00000800  000000a9  00000757  RWIX
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
   RAMLS3                00009800   00000800  00000000  00000800  RWIX
   RAMLS4                0000a000   00000800  00000000  00000800  RWIX
@@ -170,32 +170,32 @@ ramfuncs   0    00000214    00000004
 .reset     0    003fffc0    00000002     DSECT
                   003fffc0    00000002     rts2800_fpu32.lib : boot.obj (.reset)
 
-.text.1    0    00000218    000001e5     
-                  00000218    0000015a     SFO_v8_fpu_lib_build_c28.lib : SFO_v7_fpu_lib_build_c28.obj (.text)
-                  00000372    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
-                  000003fa    00000003     F2837xD_DBGIER.obj (.text)
+.text.1    0    00000218    000001e7     
+                  00000218    000001d1     main.obj (.text:retain)
+                  000003e9    00000013     ti-sfo-v8.obj (.text)
+                  000003fc    00000003     F2837xD_DBGIER.obj (.text)
 
-.text.2    0    00008000    000007ff     
+.text.2    0    00008000    000007fd     
                   00008000    000002f1     F2837xD_SysCtrl.obj (.text)
                   000082f1    00000247     F2837xD_Gpio.obj (.text)
-                  00008538    00000230     system-init.obj (.text)
-                  00008768    0000005c     F2837xD_CpuTimers.obj (.text)
-                  000087c4    00000028     F2837xD_PieCtrl.obj (.text)
-                  000087ec    00000013     ti-sfo-v8.obj (.text)
+                  00008538    00000228     system-init.obj (.text)
+                  00008760    0000005c     F2837xD_CpuTimers.obj (.text)
+                  000087bc    00000028     F2837xD_PieCtrl.obj (.text)
+                  000087e4    00000019     rts2800_fpu32.lib : args_main.obj (.text)
 
-.text.3    0    00008800    0000006c     
-                  00008800    00000019     rts2800_fpu32.lib : args_main.obj (.text)
-                  00008819    00000019                       : exit.obj (.text)
-                  00008832    00000018                       : ll_aox.obj (.text)
-                  0000884a    00000011     F2837xD_PieVect.obj (.text)
-                  0000885b    00000009     rts2800_fpu32.lib : _lock.obj (.text)
-                  00008864    00000008     F2837xD_CodeStartBranch.obj (.text)
+.text.3    0    00008800    000000a9     
+                  00008800    00000046     rts2800_fpu32.lib : boot.obj (.text)
+                  00008846    00000019                       : exit.obj (.text)
+                  0000885f    00000018                       : ll_aox.obj (.text)
+                  00008877    00000011     F2837xD_PieVect.obj (.text)
+                  00008888    00000010     main.obj (.text)
+                  00008898    00000009     rts2800_fpu32.lib : _lock.obj (.text)
+                  000088a1    00000008     F2837xD_CodeStartBranch.obj (.text)
 
 .text.4    0    0000b000    000007fc     
                   0000b000    00000611     F2837xD_DefaultISR.obj (.text:retain)
-                  0000b611    0000010b     main.obj (.text:retain)
-                  0000b71c    00000091     main.obj (.text)
-                  0000b7ad    00000046     rts2800_fpu32.lib : boot.obj (.text)
+                  0000b611    0000015a     SFO_v8_fpu_lib_build_c28.lib : SFO_v7_fpu_lib_build_c28.obj (.text)
+                  0000b76b    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
                   0000b7f3    00000009     ctrl.obj (.text)
 
 .stack     1    00000400    00000100     UNINITIALIZED
@@ -860,11 +860,11 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                                  
 ----  -------   ----                                  
 abs   ffffffff  .text                                 
-0     00008819  C$$EXIT                               
-0     00000372  FS$$DIV                               
-0     00008832  LL$$AND                               
-0     0000883a  LL$$OR                                
-0     00008842  LL$$XOR                               
+0     00008846  C$$EXIT                               
+0     0000b76b  FS$$DIV                               
+0     0000885f  LL$$AND                               
+0     00008867  LL$$OR                                
+0     0000886f  LL$$XOR                               
 1     0000a9e2  _ADC                                  
 0     0000b606  _ADCA1_ISR                            
 0     0000b5fb  _ADCA2_ISR                            
@@ -927,7 +927,7 @@ abs   ffffffff  .text
 1     00005d20  _Cmpss6Regs                           
 1     00005d40  _Cmpss7Regs                           
 1     00005d60  _Cmpss8Regs                           
-0     000087a3  _ConfigCpuTimer                       
+0     0000879b  _ConfigCpuTimer                       
 1     0005d300  _CpuSysRegs                           
 1     0000aa6c  _CpuTimer0                            
 1     00000c00  _CpuTimer0Regs                        
@@ -1023,7 +1023,7 @@ abs   ffffffff  .text
 1     00047800  _Emif2Regs                            
 1     00000d01  _EmuBMode                             
 1     00000d00  _EmuKey                               
-0     000087e3  _EnableInterrupts                     
+0     000087db  _EnableInterrupts                     
 0     00008549  _Enable_clock_for_default_peripherals 
 0     00000214  _F28x_usDelay                         
 0     0000b2aa  _FLASH_CORRECTABLE_ERROR_ISR          
@@ -1063,11 +1063,11 @@ abs   ffffffff  .text
 0     0000b23c  _IPC2_ISR                             
 0     0000b231  _IPC3_ISR                             
 0     000081db  _InitAuxPll                           
-0     00008768  _InitCpuTimers                        
+0     00008760  _InitCpuTimers                        
 0     000082f1  _InitGpio                             
 0     000080d3  _InitPeripheralClocks                 
-0     000087c4  _InitPieCtrl                          
-0     0000884a  _InitPieVectTable                     
+0     000087bc  _InitPieCtrl                          
+0     00008877  _InitPieVectTable                     
 0     0000817c  _InitSysCtrl                          
 0     00008039  _InitSysPll                           
 1     00007900  _InputXbarRegs                        
@@ -1089,11 +1089,11 @@ abs   ffffffff  .text
 1     00007a80  _OutputXbarRegs                       
 0     0000b1e4  _PIE_RESERVED_ISR                     
 0     000085d7  _PIE_to_default_settings              
-0     00008696  _PWM_all_to_default_settings          
-0     00008609  _PWM_config_default                   
-0     000087f6  _PWM_init_scale_factor_optimizer      
-0     000087ec  _PWM_scale_factor_optimizer_error     
-0     000087ef  _PWM_update_scale_factor_optimizer    
+0     0000868e  _PWM_all_to_default_settings          
+0     00008601  _PWM_config_default                   
+0     000003f3  _PWM_init_scale_factor_optimizer      
+0     000003e9  _PWM_scale_factor_optimizer_error     
+0     000003ec  _PWM_update_scale_factor_optimizer    
 1     00000ce0  _PieCtrlRegs                          
 1     00000d00  _PieVectTable                         
 1     0000a800  _PieVectTableInit                     
@@ -1114,7 +1114,7 @@ abs   ffffffff  .text
 0     0000b160  _SD1_ISR                              
 0     0000b155  _SD2_ISR                              
 1     0000a9cc  _SDFM                                 
-0     00000218  _SFO                                  
+0     0000b611  _SFO                                  
 1     0000aa99  _SFO_CAL                              
 1     0000a9da  _SPI                                  
 0     0000b14a  _SPIA_RX_ISR                          
@@ -1132,14 +1132,14 @@ abs   ffffffff  .text
 1     00005e00  _Sdfm1Regs                            
 1     00005e80  _Sdfm2Regs                            
 0     00008020  _ServiceDog                           
-0     000003fa  _SetDBGIER                            
+0     000003fc  _SetDBGIER                            
 1     00006100  _SpiaRegs                             
 1     00006110  _SpibRegs                             
 1     00006120  _SpicRegs                             
 0     00008016  _SysIntOsc1Sel                        
 0     0000800c  _SysIntOsc2Sel                        
 0     00008000  _SysXtalOscSel                        
-0     00008726  _System_init                          
+0     0000871e  _System_init                          
 0     0000b0fd  _TIMER0_ISR                           
 0     0000b0f2  _TIMER1_ISR                           
 0     0000b0e7  _TIMER2_ISR                           
@@ -1181,24 +1181,24 @@ abs   ffffffff  ___c_args__
 abs   ffffffff  ___etext__                            
 abs   ffffffff  ___pinit__                            
 abs   ffffffff  ___text__                             
-0     00008800  __args_main                           
+0     000087e4  __args_main                           
 1     0000aa3c  __lock                                
-0     00008863  __nop                                 
-0     0000885f  __register_lock                       
-0     0000885b  __register_unlock                     
+0     000088a0  __nop                                 
+0     0000889c  __register_lock                       
+0     00008898  __register_unlock                     
 1     00000400  __stack                               
 1     0000aa3e  __unlock                              
-0     00008819  _abort                                
-0     0000b6e7  _adcb_ppb_isr                         
-0     0000b6b2  _adcd_ppb_isr                         
-0     0000b7ad  _c_int00                              
-0     0000b67f  _cpu_timer2_isr                       
+0     00008846  _abort                                
+0     000003b4  _adcb_ppb_isr                         
+0     0000037f  _adcd_ppb_isr                         
+0     00008800  _c_int00                              
+0     00000289  _cpu_timer2_isr                       
 1     0000aa52  _ctrl                                 
 1     0000aa50  _ctrlHandle                           
 1     0000aa5b  _deviceOpen                           
 1     0000aa82  _ePWM                                 
-0     0000b611  _epwm1_isr                            
-0     0000881b  _exit                                 
+0     00000218  _epwm1_isr                            
+0     00008848  _exit                                 
 1     0000aa4a  _gMainPWM_Compare                     
 1     0000aa47  _gMainPWM_FED                         
 1     0000aa46  _gMainPWM_FEDHR                       
@@ -1215,7 +1215,7 @@ abs   ffffffff  ___text__
 0     0003f880  _g_usGetWriteIndexes                  
 0     0003f884  _g_usPutReadIndexes                   
 1     0003fc80  _g_usPutWriteIndexes                  
-0     0000b71c  _main                                 
+0     00008888  _main                                 
 abs   ffffffff  binit                                 
 0     00000122  cinit                                 
 0     00000000  code_start                            
@@ -1231,9 +1231,14 @@ page  address   name
 0     00000122  ___cinit__                            
 0     00000122  cinit                                 
 0     00000214  _F28x_usDelay                         
-0     00000218  _SFO                                  
-0     00000372  FS$$DIV                               
-0     000003fa  _SetDBGIER                            
+0     00000218  _epwm1_isr                            
+0     00000289  _cpu_timer2_isr                       
+0     0000037f  _adcd_ppb_isr                         
+0     000003b4  _adcb_ppb_isr                         
+0     000003e9  _PWM_scale_factor_optimizer_error     
+0     000003ec  _PWM_update_scale_factor_optimizer    
+0     000003f3  _PWM_init_scale_factor_optimizer      
+0     000003fc  _SetDBGIER                            
 0     00000ce0  _Cla1SoftIntRegs                      
 0     00008000  _SysXtalOscSel                        
 0     0000800c  _SysIntOsc2Sel                        
@@ -1271,27 +1276,26 @@ page  address   name
 0     00008549  _Enable_clock_for_default_peripherals 
 0     00008573  _GPIO_to_default_settings             
 0     000085d7  _PIE_to_default_settings              
-0     00008609  _PWM_config_default                   
-0     00008696  _PWM_all_to_default_settings          
-0     00008726  _System_init                          
-0     00008768  _InitCpuTimers                        
-0     000087a3  _ConfigCpuTimer                       
-0     000087c4  _InitPieCtrl                          
-0     000087e3  _EnableInterrupts                     
-0     000087ec  _PWM_scale_factor_optimizer_error     
-0     000087ef  _PWM_update_scale_factor_optimizer    
-0     000087f6  _PWM_init_scale_factor_optimizer      
-0     00008800  __args_main                           
-0     00008819  C$$EXIT                               
-0     00008819  _abort                                
-0     0000881b  _exit                                 
-0     00008832  LL$$AND                               
-0     0000883a  LL$$OR                                
-0     00008842  LL$$XOR                               
-0     0000884a  _InitPieVectTable                     
-0     0000885b  __register_unlock                     
-0     0000885f  __register_lock                       
-0     00008863  __nop                                 
+0     00008601  _PWM_config_default                   
+0     0000868e  _PWM_all_to_default_settings          
+0     0000871e  _System_init                          
+0     00008760  _InitCpuTimers                        
+0     0000879b  _ConfigCpuTimer                       
+0     000087bc  _InitPieCtrl                          
+0     000087db  _EnableInterrupts                     
+0     000087e4  __args_main                           
+0     00008800  _c_int00                              
+0     00008846  C$$EXIT                               
+0     00008846  _abort                                
+0     00008848  _exit                                 
+0     0000885f  LL$$AND                               
+0     00008867  LL$$OR                                
+0     0000886f  LL$$XOR                               
+0     00008877  _InitPieVectTable                     
+0     00008888  _main                                 
+0     00008898  __register_unlock                     
+0     0000889c  __register_lock                       
+0     000088a0  __nop                                 
 0     0000b000  _XINT5_ISR                            
 0     0000b00b  _XINT4_ISR                            
 0     0000b016  _XINT3_ISR                            
@@ -1433,12 +1437,8 @@ page  address   name
 0     0000b5f0  _ADCA3_ISR                            
 0     0000b5fb  _ADCA2_ISR                            
 0     0000b606  _ADCA1_ISR                            
-0     0000b611  _epwm1_isr                            
-0     0000b67f  _cpu_timer2_isr                       
-0     0000b6b2  _adcd_ppb_isr                         
-0     0000b6e7  _adcb_ppb_isr                         
-0     0000b71c  _main                                 
-0     0000b7ad  _c_int00                              
+0     0000b611  _SFO                                  
+0     0000b76b  FS$$DIV                               
 0     0000b7f3  _CTRL_setDefaultParams                
 0     0000b7f5  _CTRL_init                            
 0     0003f800  _g_asIPCCPU2toCPU1Buffers             

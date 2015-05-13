@@ -105,8 +105,32 @@ void main()
 			next_state    = CTRL_getNextSinCycleState(ctrlHandle);
 
 
-		}
+		 	if(current_state == CTRL_SinCycleState_Positive){
+		 		gMainPWM_Compare =  gScaleLow *((uint32_t)gMainPWM_Period << 16);
+		 	}else {
+		 		gMainPWM_Compare =  gScaleHi *((uint32_t)gMainPWM_Period << 16);
+		 	}
 
+		 	gMainPWM_Phase2Shift = MATH_ONE_OVER_THREE * gMainPWM_Period;
+		 	gMainPWM_Phase3Shift = MATH_TWO_OVER_THREE * gMainPWM_Period;
+
+
+		}
+		{
+			EPwm1Regs.DBRED = gMainPWM_RED;
+			EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+			EPwm2Regs.DBRED = gMainPWM_RED;
+			EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+			EPwm3Regs.DBRED = gMainPWM_RED;
+			EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+
+			EPwm1Regs.DBFED = gMainPWM_FED;
+			EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+			EPwm2Regs.DBFED = gMainPWM_FED;
+			EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+			EPwm3Regs.DBFED = gMainPWM_FED;
+			EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+		}
 
 		PWM_update_scale_factor_optimizer();
 	}
@@ -117,13 +141,13 @@ void main()
 
 __interrupt void epwm1_isr(void)
 {
-
+	GPIO_setHigh(GPIO_LED_BLUE);
 
 	static uint16_t counter=0;
 
 //	if(counter++ == 2){
 //		counter = 0;
-		GPIO_setHigh(GPIO_LED_BLUE);
+
 		EPwm1Regs.CMPA.all= gMainPWM_Compare;
 		EPwm1Regs.TBPRD   = gMainPWM_Period;
 		EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
@@ -142,7 +166,7 @@ __interrupt void epwm1_isr(void)
 //			GPIO_toggle(GPIO_LED_BLUE);
 		}
 
-		GPIO_setHigh(GPIO_LED_BLUE);
+
 
 //	}
 
@@ -163,54 +187,6 @@ __interrupt void cpu_timer2_isr(void)
 
 	GPIO_setHigh(GPIO_LED_WHITE);
 
-	CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
-	CTRL_SinCycleState_e current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
-
-	if(current_state != next_state)
-//	if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
-	{
-
-		CTRL_doChangeSinCycleState(ctrlHandle, next_state);
-//			GPIO_toggle(GPIO_LED_BLUE);
-		current_state = next_state;
-	}
-
- 	if(current_state == CTRL_SinCycleState_Positive){
- 		gMainPWM_Compare =  gScaleLow *((uint32_t)gMainPWM_Period << 16);
- 	}else {
- 		gMainPWM_Compare =  gScaleHi *((uint32_t)gMainPWM_Period << 16);
- 	}
- 	gMainPWM_Phase2Shift = MATH_ONE_OVER_THREE * gMainPWM_Period;
- 	gMainPWM_Phase3Shift = MATH_TWO_OVER_THREE * gMainPWM_Period;
-
-
-	EPwm1Regs.CMPA.all= gMainPWM_Compare;
-	EPwm1Regs.TBPRD   = gMainPWM_Period;
-	EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
-	EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
-
-	EPwm1Regs.DBRED = gMainPWM_RED;
-	EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-	EPwm2Regs.DBRED = gMainPWM_RED;
-	EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-	EPwm3Regs.DBRED = gMainPWM_RED;
-	EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-
-	EPwm1Regs.DBFED = gMainPWM_FED;
-	EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
-	EPwm2Regs.DBFED = gMainPWM_FED;
-	EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
-	EPwm3Regs.DBFED = gMainPWM_FED;
-	EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
-
-
-
-
-
-
-
-
-
 
 	static uint16_t line_freq_cnt = 0;
 
@@ -223,12 +199,10 @@ __interrupt void cpu_timer2_isr(void)
 	switch (line_freq_cnt) {
 	case 0: //begin of positive cycle
 		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Positive);
-//		CTRL_doChangeSinCycleState(ctrlHandle, CTRL_SinCycleState_Positive);
 
 		break;
 	case 83: //begin of negative cycle
 		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Negative);
-//		CTRL_doChangeSinCycleState(ctrlHandle, CTRL_SinCycleState_Negative);
 
 		break;
 	default:

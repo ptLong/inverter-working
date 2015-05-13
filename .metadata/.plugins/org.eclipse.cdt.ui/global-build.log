@@ -1240,3 +1240,141 @@ gmake: *** [main.obj] Error 1
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Building file: ../system-init.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="system-init.pp"  "../system-init.c"
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 132: warning #179-D: variable "counter" was declared but never referenced
+'Finished building: ../main.c'
+' '
+'Finished building: ../system-init.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 102: warning #552-D: variable "current_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 125: warning #179-D: variable "counter" was declared but never referenced
+"../main.c", line 169: error #20: identifier "current_state" is undefined
+1 error detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 102: warning #552-D: variable "current_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 125: warning #179-D: variable "counter" was declared but never referenced
+'Finished building: ../main.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 102: warning #552-D: variable "current_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 125: warning #179-D: variable "counter" was declared but never referenced
+'Finished building: ../main.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 102: warning #552-D: variable "current_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 122: warning #179-D: variable "counter" was declared but never referenced
+'Finished building: ../main.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../main.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 102: warning #552-D: variable "current_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 122: warning #179-D: variable "counter" was declared but never referenced
+'Finished building: ../main.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project oit-inverter-final ****
+
+"E:\\ti\\ccs6\\ccsv6\\utils\\bin\\gmake" -j 3 all 
+'Building file: ../system-init.c'
+'Invoking: C2000 Compiler'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="system-init.pp"  "../system-init.c"
+'Finished building: ../system-init.c'
+' '
+'Building target: oit-inverter-final.out'
+'Invoking: C2000 Linker'
+"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 -z -m"oit-inverter-final.map" --stack_size=0x100 --warn_sections -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/lib" -i"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/cmd" -i"E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="oit-inverter-final_linkInfo.xml" --entry_point=code_start --rom_model -o "oit-inverter-final.out" "./ctrl.obj" "./main.obj" "./oit-pwm.obj" "./system-init.obj" "./ti-sfo-v8.obj" "./TI/F2837xD_Adc.obj" "./TI/F2837xD_CodeStartBranch.obj" "./TI/F2837xD_CpuTimers.obj" "./TI/F2837xD_DBGIER.obj" "./TI/F2837xD_DefaultISR.obj" "./TI/F2837xD_Dma.obj" "./TI/F2837xD_ECap.obj" "./TI/F2837xD_EPwm.obj" "./TI/F2837xD_EQep.obj" "./TI/F2837xD_Emif.obj" "./TI/F2837xD_GlobalVariableDefs.obj" "./TI/F2837xD_Gpio.obj" "./TI/F2837xD_I2C.obj" "./TI/F2837xD_Ipc.obj" "./TI/F2837xD_Ipc_Driver.obj" "./TI/F2837xD_Ipc_Driver_Lite.obj" "./TI/F2837xD_Ipc_Driver_Util.obj" "./TI/F2837xD_Mcbsp.obj" "./TI/F2837xD_PieCtrl.obj" "./TI/F2837xD_PieVect.obj" "./TI/F2837xD_Sci.obj" "./TI/F2837xD_Spi.obj" "./TI/F2837xD_SysCtrl.obj" "./TI/F2837xD_Upp.obj" "./TI/F2837xD_sci_io.obj" "./TI/F2837xD_sdfm_drivers.obj" "./TI/F2837xD_struct.obj" "./TI/F2837xD_usDelay.obj" "../TI/SFO_v8_fpu_lib_build_c28.lib"  -l"rts2800_fpu32.lib" -l"2837xD_RAM_lnk_cpu1.cmd" -l"F2837xD_Headers_nonBIOS_cpu1.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: oit-inverter-final.out'
+' '
+
+**** Build Finished ****
