@@ -41,6 +41,9 @@
 // **************************************************************************
 // the includes
 
+#include "ctrl.h"
+#include "user.h"
+#include "oit-gpio.h"
 
 
 // **************************************************************************
@@ -57,3 +60,55 @@
 
 // **************************************************************************
 // the functions
+
+CTRL_Handle CTRL_init(void *pMemory,const size_t numBytes)
+{
+	CTRL_Handle handle;
+	//CTRL_Obj *obj;
+
+
+	if(numBytes < sizeof(CTRL_Obj))
+		return((CTRL_Handle)NULL);
+
+
+	// assign the handle
+	handle = (CTRL_Handle)pMemory;
+
+
+//	// set the version
+//	CTRL_setVersion(handle,CTRL_TargetProc_2806x,
+//			CTRL_MAJOR_RELEASE_NUMBER,CTRL_MINOR_RELEASE_NUMBER);
+
+
+	// assign the object
+	//obj = (CTRL_Obj *)handle;
+
+
+//	// initialize the Id PI controller module
+//	obj->piHandle_Id = PI_init(&obj->pi_Id,sizeof(obj->pi_Id));
+//
+//
+//	// initialize the Iq PI controller module
+//	obj->piHandle_Iq = PI_init(&obj->pi_Iq,sizeof(obj->pi_Iq));
+//
+//
+//	// initialize the speed PI controller module
+//	obj->piHandle_spd = PI_init(&obj->pi_spd,sizeof(obj->pi_spd));
+
+	return(handle);
+} // end of CTRL_init() function
+
+void CTRL_setDefaultParams(CTRL_Handle handle)
+{
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+
+//	obj->lowFreq_mosfet_high = GPIO_LOWFREQMOSFET_HIGH;
+//	obj->lowFreq_mosfet_low  = GPIO_LOWFREQMOSFET_LOW;
+
+	
+	obj->sinCycleState     = CTRL_SinCycleState_Positive;
+
+}
+
+
+

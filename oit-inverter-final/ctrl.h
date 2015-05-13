@@ -46,7 +46,8 @@
 // **************************************************************************
 // the includes
 
-
+#include "oit-types.h"
+#include "ctrl_obj.h"
 
 //!
 //!
@@ -70,6 +71,84 @@ extern "C" {
 
 // **************************************************************************
 // the function prototypes
+
+//! \brief     Initializes the controller
+//! \param[in] pMemory   A pointer to the memory for the controller object
+//! \param[in] numBytes  The number of bytes allocated for the controller object, bytes
+//! \return    The controller (CTRL) object handle
+CTRL_Handle CTRL_init(void *pMemory,const size_t numBytes);
+
+//! \brief      Sets the controller parameters
+//! \details    This function allows for updates in scale factors during real-time
+//!             operation of the controller.
+//! \param[in]  handle       The controller (CTRL) handle
+void CTRL_setDefaultParams(CTRL_Handle handle);
+
+
+//! \brief
+//! \param[in]  handle  The controller (CTRL) handle
+inline void CTRL_setNextSinCycleState(CTRL_Handle handle, const CTRL_SinCycleState_e state)
+{
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+	
+	obj->nextSinCycleState = state;
+}
+
+
+//! \brief
+//! \param[in]  handle  The controller (CTRL) handle
+inline CTRL_SinCycleState_e CTRL_getNextSinCycleState(CTRL_Handle handle)
+{
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+
+	return (obj->nextSinCycleState);
+}
+
+//! \brief
+//! \param[in]  handle  The controller (CTRL) handle
+inline void CTRL_setCurrentSinCycleState(CTRL_Handle handle, const CTRL_SinCycleState_e state)
+{
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+	
+	obj->sinCycleState = state;
+}
+
+
+//! \brief
+//! \param[in]  handle  The controller (CTRL) handle
+inline CTRL_SinCycleState_e CTRL_getCurrentSinCycleState(CTRL_Handle handle)
+{
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+
+	return (obj->sinCycleState);
+}
+
+
+
+//! \brief
+//! \param[in]  handle  The controller (CTRL) handle
+inline void CTRL_doChangeSinCycleState(CTRL_Handle handle, const CTRL_SinCycleState_e state)
+{
+	//TODO: assert current sincycle state != next sin cycle state
+	CTRL_Obj *obj = (CTRL_Obj *)handle;
+
+	if(state == CTRL_SinCycleState_Negative){
+//		GPIO_setLow(obj->lowFreq_mosfet_low);
+//		//delay for 500ns
+//		GPIO_setHigh(obj->lowFreq_mosfet_high);
+		EPwm4Regs.CMPA.bit.CMPA = 0xffff;
+	}else if(state == CTRL_SinCycleState_Positive){
+//		GPIO_setLow(obj->lowFreq_mosfet_high);
+//		//delay for 500ns
+//		GPIO_setHigh(obj->lowFreq_mosfet_low);
+		EPwm4Regs.CMPA.all = 0;
+
+	}
+	
+	obj->sinCycleState = state;
+}
+
+
 
 #ifdef __cplusplus
 }

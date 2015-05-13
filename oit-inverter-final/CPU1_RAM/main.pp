@@ -4,15 +4,15 @@ main.obj: ../main.c
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F28x_Project.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F2837xD_Cla_typedefs.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_device.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/assert.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/linkage.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdbool.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/yvals.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/_lock.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stddef.h
-main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdint.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/assert.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/linkage.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdbool.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/yvals.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/_lock.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stddef.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdint.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_adc.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_analogsubsys.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_cla.h
@@ -65,20 +65,26 @@ main.obj: ../ti-sfo-v8.h
 main.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/SFO_V8.h
 main.obj: ../user.h
 main.obj: ../oit-gpio.h
+main.obj: ../ctrl.h
+main.obj: ../oit-types.h
+main.obj: ../stdbool.h
+main.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/string.h
+main.obj: ../ctrl_obj.h
+main.obj: ../oit-math.h
 
 ../main.c: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F28x_Project.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F2837xD_Cla_typedefs.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_device.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/assert.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/linkage.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdbool.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/yvals.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/_lock.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stddef.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdint.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/assert.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/linkage.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdbool.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/yvals.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/_lock.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stddef.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdint.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_adc.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_analogsubsys.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_cla.h: 
@@ -131,3 +137,9 @@ E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F2837
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/SFO_V8.h: 
 ../user.h: 
 ../oit-gpio.h: 
+../ctrl.h: 
+../oit-types.h: 
+../stdbool.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/string.h: 
+../ctrl_obj.h: 
+../oit-math.h: 

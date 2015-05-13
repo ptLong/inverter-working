@@ -47,6 +47,8 @@
 #include "ti-sfo-v8.h"
 #include "user.h"
 #include "oit-gpio.h"
+#include "ctrl.h"
+#include "oit-math.h"
 
 // **************************************************************************
 // the defines
@@ -56,6 +58,24 @@
 
 // **************************************************************************
 // the globals
+
+CTRL_Obj ctrl;
+CTRL_Handle ctrlHandle;
+
+//==========temporary vars for debug only
+
+uint32_t gMainPWM_Compare = 0;
+uint16_t gMainPWM_Period = 667;
+uint16_t gMainPWM_Phase2Shift = 0;
+uint16_t gMainPWM_Phase3Shift = 0;
+uint16_t gMainPWM_RED     = 3;
+uint16_t gMainPWM_REDHR   = 128;
+uint16_t gMainPWM_FED     = 3;
+uint16_t gMainPWM_FEDHR   = 128;
+
+
+float_t gScaleLow	= 0.1;
+float_t gScaleHi	= 0.9;
 
 // **************************************************************************
 // the local function prototypes
@@ -71,8 +91,30 @@ void main()
 {
 	System_init();
 
+	ctrlHandle = CTRL_init(&ctrl, sizeof(ctrl));
+
+	CTRL_setDefaultParams(ctrlHandle);
+
 	while(1)
 	{
+
+
+		{
+			CTRL_SinCycleState_e current_state, next_state;
+
+			current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
+			next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+
+
+		 	if(current_state == CTRL_SinCycleState_Positive){
+		 		gMainPWM_Compare =  gScaleLow *((uint32_t)gMainPWM_Period << 16);
+		 	}else {
+		 		gMainPWM_Compare =  gScaleHi *((uint32_t)gMainPWM_Period << 16);
+		 	}
+
+		 	gMainPWM_Phase2Shift = MATH_ONE_OVER_THREE * gMainPWM_Period;
+		 	gMainPWM_Phase3Shift = MATH_TWO_OVER_THREE * gMainPWM_Period;
+		}
 
 		PWM_update_scale_factor_optimizer();
 	}
@@ -81,36 +123,125 @@ void main()
 
 
 
+__interrupt void epwm1_isr(void)
+{
+	static uint16_t counter=0;
+
+	if(counter++ == 2){
+		counter = 0;
+
+		//GPIO_setHigh(GPIO_LED_BLUE);
+
+		EPwm1Regs.CMPA.all= gMainPWM_Compare;
+		EPwm1Regs.TBPRD   = gMainPWM_Period;
+
+		EPwm1Regs.DBRED = gMainPWM_RED;
+		EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+		EPwm2Regs.DBRED = gMainPWM_RED;
+		EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+		EPwm3Regs.DBRED = gMainPWM_RED;
+		EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+
+		EPwm1Regs.DBFED = gMainPWM_FED;
+		EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+		EPwm2Regs.DBFED = gMainPWM_FED;
+		EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+		EPwm3Regs.DBFED = gMainPWM_FED;
+		EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+
+		EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
+		EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
+
+
+
+//
+//		EPwm1Regs.CMPA.all= gMainPWM_Compare;
+//		EPwm1Regs.TBPRD   = gMainPWM_Period;
+//
+//		EPwm1Regs.DBRED = gMainPWM_RED;
+//		EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+//		EPwm2Regs.DBRED = gMainPWM_RED;
+//		EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+//		EPwm3Regs.DBRED = gMainPWM_RED;
+//		EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+//
+//		EPwm1Regs.DBFED = gMainPWM_FED;
+//		EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+//		EPwm2Regs.DBFED = gMainPWM_FED;
+//		EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+//		EPwm3Regs.DBFED = gMainPWM_FED;
+//		EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+//
+//		EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
+//		EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
+
+
+
+
+		CTRL_SinCycleState_e current_state, next_state;
+
+		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
+		next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+
+		if(current_state != next_state)
+		{
+			CTRL_doChangeSinCycleState(ctrlHandle, next_state);
+			GPIO_toggle(GPIO_LED_BLUE);
+		}
+
+		//GPIO_setLow(GPIO_LED_BLUE);
+
+	}
+
+	// Clear INT flag for this timer
+	EPwm1Regs.ETCLR.bit.INT = 1;
+
+	// Acknowledge this interrupt to receive more interrupts from group 3
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP3;
+
+
+}
 
 __interrupt void cpu_timer2_isr(void)
 {
 	GPIO_setHigh(GPIO_LED_WHITE);
-	GPIO_setLow(GPIO_LED_BLUE);
+
 
 	static uint16_t line_freq_cnt = 0;
 
 	if(line_freq_cnt++ == 166){
 		line_freq_cnt = 0;
 
-		EPwm1Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
-		EPwm4Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
+		//EPwm1Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
 	}
 
-	if(line_freq_cnt < 83){
-//		EPwm4Regs.CMPA.all = 0;
+	switch (line_freq_cnt) {
+	case 0: //begin of positive cycle
+		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Positive);
 
+		break;
+	case 83: //begin of negative cycle
+		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Negative);
 
-		EPwm1Regs.CMPA.bit.CMPA = ( 0.1 *EPwm1Regs.TBPRD );
-
-
-	}else{
-		EPwm4Regs.CMPA.all = (uint32_t)0xffff << 16;
-
-		EPwm1Regs.CMPA.bit.CMPA = ( 0.9 *EPwm1Regs.TBPRD );
+		break;
+	default:
+		break;
 	}
 
-	EPwm2Regs.TBPHS.bit.TBPHS = 0.3333333 * EPwm2Regs.TBPRD;
-	EPwm3Regs.TBPHS.bit.TBPHS = 0.6666666 * EPwm3Regs.TBPRD;
+
+//	if(line_freq_cnt < 83){
+////		EPwm4Regs.CMPA.all = 0;
+//
+//		EPwm1Regs.CMPA.bit.CMPA = ( 0.1 *EPwm1Regs.TBPRD );
+//
+//
+//	}else{
+//		EPwm4Regs.CMPA.all = (uint32_t)0xffff << 16;
+//
+//		EPwm1Regs.CMPA.bit.CMPA = ( 0.9 *EPwm1Regs.TBPRD );
+//	}
+
+
 
 
 
@@ -134,7 +265,7 @@ __interrupt void cpu_timer2_isr(void)
 
 
 	GPIO_setLow(GPIO_LED_WHITE);
-	GPIO_setHigh(GPIO_LED_BLUE);
+
    // The CPU acknowledges the interrupt.
 }
 

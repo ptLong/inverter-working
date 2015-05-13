@@ -76,7 +76,7 @@ extern __interrupt void cpu_timer2_isr(void);
 extern __interrupt void adcd_ppb_isr(void);
 extern __interrupt void adcb_ppb_isr(void);
 
-
+extern __interrupt void epwm1_isr(void);
 
 #ifdef __cplusplus
 }

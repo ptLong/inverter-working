@@ -4,15 +4,15 @@ ti-sfo-v8.obj: ../ti-sfo-v8.c
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F28x_Project.h
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F2837xD_Cla_typedefs.h
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_device.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/assert.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/linkage.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdbool.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/yvals.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/_lock.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stddef.h
-ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdint.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/assert.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/linkage.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdbool.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/yvals.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/_lock.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stddef.h
+ti-sfo-v8.obj: E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdint.h
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_adc.h
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_analogsubsys.h
 ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_cla.h
@@ -67,15 +67,15 @@ ti-sfo-v8.obj: E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_commo
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F28x_Project.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include/F2837xD_Cla_typedefs.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_device.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/assert.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/linkage.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdbool.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/yvals.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdarg.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/_lock.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stddef.h: 
-E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include/stdint.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/assert.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/linkage.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdbool.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/yvals.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdarg.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/_lock.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stddef.h: 
+E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include/stdint.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_adc.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_analogsubsys.h: 
 E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include/F2837xD_cla.h: 

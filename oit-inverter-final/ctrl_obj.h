@@ -46,7 +46,7 @@
 // **************************************************************************
 // the includes
 
-
+#include "oit-gpio.h"
 
 //!
 //!
@@ -84,127 +84,146 @@ extern "C" {
 //!
 typedef struct _CTRL_Version_
 {
-  uint16_t rsvd;            //!< reserved value
-  uint16_t targetProc;      //!< the target processor
-  uint16_t major;           //!< the major release number
-  uint16_t minor;           //!< the minor release number
+	uint16_t rsvd;            //!< reserved value
+	uint16_t targetProc;      //!< the target processor
+	uint16_t major;           //!< the major release number
+	uint16_t minor;           //!< the minor release number
 } CTRL_Version;
 
 //! \brief Enumeration for the controller states
 //!
 typedef enum {
-  CTRL_State_Error=0,           //!< the controller error state
-  CTRL_State_Idle,              //!< the controller idle state
-  CTRL_State_OffLine,           //!< the controller offline state
-  CTRL_State_OnLine,            //!< the controller online state
-  CTRL_numStates                //!< the number of controller states
+	CTRL_State_Error=0,           //!< the controller error state
+	CTRL_State_Idle,              //!< the controller idle state
+	CTRL_State_OffLine,           //!< the controller offline state
+	CTRL_State_OnLine,            //!< the controller online state
+	CTRL_numStates                //!< the number of controller states
 } CTRL_State_e;
 
 //! \brief Enumeration for the error codes
 //!
 typedef enum
 {
-  CTRL_ErrorCode_NoError=0,        //!< no error error code
-  CTRL_ErrorCode_OverCurrent,      //!< over current error code
-  CTRL_ErrorCode_OverVoltage,      //!< over voltage error code
-  CTRL_numErrorCodes               //!< the number of controller error codes
+	CTRL_ErrorCode_NoError=0,        //!< no error error code
+	CTRL_ErrorCode_OverCurrent,      //!< over current error code
+	CTRL_ErrorCode_OverVoltage,      //!< over voltage error code
+	CTRL_numErrorCodes               //!< the number of controller error codes
 } CTRL_ErrorCode_e;
 
+
+//! \brief Enumeration for the e
+//!
+typedef enum
+{
+	CTRL_SinCycleState_Positive=0,        //!< positive sin cycle state
+	CTRL_SinCycleState_Negative,          //!< negative sin cyle state
+	CTRL_numSinCycleStates                 //!< the number of state
+} CTRL_SinCycleState_e;
 
 //! \brief Defines the controller (CTRL) object
 //!
 typedef struct _CTRL_Obj_
 {
-  CTRL_Version       version;                      //!< the controller version
+	CTRL_Version       version;                      //!< the controller version
 
-  CTRL_State_e       state;                        //!< the current state of the controller
+	CTRL_State_e       state;                        //!< the current state of the controller
 
-  CTRL_State_e       prevState;                    //!< the previous state of the controller
+	CTRL_State_e       prevState;                    //!< the previous state of the controller
 
-  CTRL_ErrorCode_e   errorCode;                    //!< the error code for the controller
+	CTRL_ErrorCode_e   errorCode;                    //!< the error code for the controller
 
 
-//  PI_Handle          piHandle_Id;                  //!< the handle for the Id PI controller
-//  PI_Obj             pi_Id;                        //!< the Id PI controller object
+	CTRL_SinCycleState_e	sinCycleState;
+
+	CTRL_SinCycleState_e	nextSinCycleState;
+
+
+//	GPIO_Number_e      lowFreq_mosfet_low;
 //
-//  PI_Handle          piHandle_Iq;                  //!< the handle for the Iq PI controller
-//  PI_Obj             pi_Iq;                        //!< the Iq PI controller object
+//	GPIO_Number_e      lowFreq_mosfet_high;
+
+
+//	PI_Handle          piHandle_Id;                  //!< the handle for the Id PI controller
+//	PI_Obj             pi_Id;                        //!< the Id PI controller object
 //
-//  PI_Handle          piHandle_spd;                 //!< the handle for the speed PI controller
-//  PI_Obj             pi_spd;                       //!< the speed PI controller object
+//	PI_Handle          piHandle_Iq;                  //!< the handle for the Iq PI controller
+//	PI_Obj             pi_Iq;                        //!< the Iq PI controller object
 //
-//  MOTOR_Params       motorParams;                  //!< the motor parameters
+//	PI_Handle          piHandle_spd;                 //!< the handle for the speed PI controller
+//	PI_Obj             pi_spd;                       //!< the speed PI controller object
 //
-//  int_least32_t      waitTimes[CTRL_numStates];    //!< an array of wait times for each state, isr clock counts
+//	MOTOR_Params       motorParams;                  //!< the motor parameters
 //
-//  int_least32_t      counter_state;                //!< the state counter
+//	int_least32_t      waitTimes[CTRL_numStates];    //!< an array of wait times for each state, isr clock counts
 //
-//  int_least16_t      numIsrTicksPerCtrlTick;       //!< Defines the number of isr clock ticks per controller clock tick
+//	int_least32_t      counter_state;                //!< the state counter
 //
-//  int_least16_t      numCtrlTicksPerCurrentTick;   //!< Defines the number of controller clock ticks per current controller clock tick
+//	int_least16_t      numIsrTicksPerCtrlTick;       //!< Defines the number of isr clock ticks per controller clock tick
 //
-//  int_least16_t      numCtrlTicksPerSpeedTick;     //!< Defines the number of controller clock ticks per speed controller clock tick
+//	int_least16_t      numCtrlTicksPerCurrentTick;   //!< Defines the number of controller clock ticks per current controller clock tick
 //
-//  uint_least32_t     ctrlFreq_Hz;                  //!< Defines the controller frequency, Hz
+//	int_least16_t      numCtrlTicksPerSpeedTick;     //!< Defines the number of controller clock ticks per speed controller clock tick
 //
-//  float_t            ctrlPeriod_sec;               //!< Defines the controller period, sec
-//  float_t            currentCtrlPeriod_sec;        //!< the period at which the current controller runs, sec
-//  float_t            speedCtrlPeriod_sec;          //!< the period at which the speed controller runs, sec
+//	uint_least32_t     ctrlFreq_Hz;                  //!< Defines the controller frequency, Hz
 //
-//  MATH_vec2          Idq_A;                        //!< the Idq values, A
+//	float_t            ctrlPeriod_sec;               //!< Defines the controller period, sec
+//	float_t            currentCtrlPeriod_sec;        //!< the period at which the current controller runs, sec
+//	float_t            speedCtrlPeriod_sec;          //!< the period at which the speed controller runs, sec
 //
-//  MATH_vec2          Idq_ref_A;                    //!< the Idq reference values, A
+//	MATH_vec2          Idq_A;                        //!< the Idq values, A
 //
-//  MATH_vec2          Idq_offset_A;                 //!< the Idq offset values, A
+//	MATH_vec2          Idq_ref_A;                    //!< the Idq reference values, A
 //
-//  MATH_vec2          Vdq_V;                        //!< the Vdq values, V
+//	MATH_vec2          Idq_offset_A;                 //!< the Idq offset values, A
 //
-//  MATH_vec2          Vdq_offset_V;                 //!< the Vdq offset values, V
+//	MATH_vec2          Vdq_V;                        //!< the Vdq values, V
 //
-//  float_t            Vd_sf;                        //!< the Vd scale factor
+//	MATH_vec2          Vdq_offset_V;                 //!< the Vdq offset values, V
 //
-//  float_t            maxVsMag_V;                   //!< the maximum stator voltage magnitude value, V
+//	float_t            Vd_sf;                        //!< the Vd scale factor
 //
-//  float_t            Kp_Id_VpA;                    //!< the desired Kp_Id value, V/A
-//  float_t            Kp_Iq_VpA;                    //!< the desired Kp_Iq value, V/A
-//  float_t            Kp_spd_ApHz;                  //!< the desired Kp_spd value, A/Hz
+//	float_t            maxVsMag_V;                   //!< the maximum stator voltage magnitude value, V
 //
-//  float_t            Ki_Id;                        //!< the desired Ki_Id value, unitless
-//  float_t            Ki_Iq;                        //!< the desired Ki_Iq value, unitless
-//  float_t            Ki_spd_ApHz;                  //!< the desired Ki_spd value, A/Hz
+//	float_t            Kp_Id_VpA;                    //!< the desired Kp_Id value, V/A
+//	float_t            Kp_Iq_VpA;                    //!< the desired Kp_Iq value, V/A
+//	float_t            Kp_spd_ApHz;                  //!< the desired Kp_spd value, A/Hz
 //
-//  float_t            Ui_Id_V;                      //!< the start integrator value for the Id controller, V
-//  float_t            Ui_Iq_V;                      //!< the start integrator value for the Iq controller, V
-//  float_t            Ui_spd_A;                     //!< the start integrator value for the speed controller, A
+//	float_t            Ki_Id;                        //!< the desired Ki_Id value, unitless
+//	float_t            Ki_Iq;                        //!< the desired Ki_Iq value, unitless
+//	float_t            Ki_spd_ApHz;                  //!< the desired Ki_spd value, A/Hz
 //
-//  float_t            BWc_rps;                      //!< the bandwidth of the current controllers, rad/sec
-//  float_t            BWdelta;                      //!< the bandwidth scaling to maximize phase margin
-//  float_t            Kctrl_Wb_p_kgm2;              //!< the controller constant, Wb/(kg*m^2)
+//	float_t            Ui_Id_V;                      //!< the start integrator value for the Id controller, V
+//	float_t            Ui_Iq_V;                      //!< the start integrator value for the Iq controller, V
+//	float_t            Ui_spd_A;                     //!< the start integrator value for the speed controller, A
 //
-//  float_t            speed_ref_Hz;                 //!< the reference speed value, Hz
+//	float_t            BWc_rps;                      //!< the bandwidth of the current controllers, rad/sec
+//	float_t            BWdelta;                      //!< the bandwidth scaling to maximize phase margin
+//	float_t            Kctrl_Wb_p_kgm2;              //!< the controller constant, Wb/(kg*m^2)
 //
-//  float_t            speed_fb_Hz;                  //!< the feedback speed value, Hz
+//	float_t            speed_ref_Hz;                 //!< the reference speed value, Hz
 //
-//  float_t            speed_out_A;                  //!< the output value from the speed controller, A
-//  float_t            speed_outMax_A;               //!< the maximum output value for the speed controller, A
+//	float_t            speed_fb_Hz;                  //!< the feedback speed value, Hz
 //
-//  int_least16_t      counter_isr;                  //!< the isr counter
-//  int_least16_t      counter_current;              //!< the isr counter
-//  int_least16_t      counter_speed;                //!< the speed counter
+//	float_t            speed_out_A;                  //!< the output value from the speed controller, A
+//	float_t            speed_outMax_A;               //!< the maximum output value for the speed controller, A
 //
-//  bool               flag_enable;                  //!< a flag to enable the controller
-//  bool               flag_enableCurrentCtrl;       //!< a flag to enable the current controllers
-//  bool               flag_enableSpeedCtrl;         //!< a flag to enable the speed controller
+//	int_least16_t      counter_isr;                  //!< the isr counter
+//	int_least16_t      counter_current;              //!< the isr counter
+//	int_least16_t      counter_speed;                //!< the speed counter
 //
-//  bool               flag_updateKi_spd;            //!< a flag to update Ki_spd
-//  bool               flag_updateKi_Id;             //!< a flag to update Ki_Id
-//  bool               flag_updateKi_Iq;             //!< a flag to update Ki_Iq
+//	bool               flag_enable;                  //!< a flag to enable the controller
+//	bool               flag_enableCurrentCtrl;       //!< a flag to enable the current controllers
+//	bool               flag_enableSpeedCtrl;         //!< a flag to enable the speed controller
 //
-//  bool               flag_resetInt_spd;            //!< a flag to reset the speed integrator
-//  bool               flag_resetInt_Id;             //!< a flag to reset the Id integrator
-//  bool               flag_resetInt_Iq;             //!< a flag to reset the Iq integrator
+//	bool               flag_updateKi_spd;            //!< a flag to update Ki_spd
+//	bool               flag_updateKi_Id;             //!< a flag to update Ki_Id
+//	bool               flag_updateKi_Iq;             //!< a flag to update Ki_Iq
 //
-//  bool               flag_useZeroIq_ref;           //!< a flag to force a Iq = 0 reference value
+//	bool               flag_resetInt_spd;            //!< a flag to reset the speed integrator
+//	bool               flag_resetInt_Id;             //!< a flag to reset the Id integrator
+//	bool               flag_resetInt_Iq;             //!< a flag to reset the Iq integrator
+//
+//	bool               flag_useZeroIq_ref;           //!< a flag to force a Iq = 0 reference value
 } CTRL_Obj;
 
 

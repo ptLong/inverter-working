@@ -1,0 +1,202 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+TI/F2837xD_Adc.obj: ../TI/F2837xD_Adc.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Adc.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_CodeStartBranch.obj: ../TI/F2837xD_CodeStartBranch.asm $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_CodeStartBranch.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_CpuTimers.obj: ../TI/F2837xD_CpuTimers.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_CpuTimers.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_DBGIER.obj: ../TI/F2837xD_DBGIER.asm $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_DBGIER.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_DefaultISR.obj: ../TI/F2837xD_DefaultISR.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_DefaultISR.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Dma.obj: ../TI/F2837xD_Dma.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Dma.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_ECap.obj: ../TI/F2837xD_ECap.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_ECap.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_EPwm.obj: ../TI/F2837xD_EPwm.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_EPwm.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_EQep.obj: ../TI/F2837xD_EQep.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_EQep.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Emif.obj: ../TI/F2837xD_Emif.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Emif.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_GlobalVariableDefs.obj: ../TI/F2837xD_GlobalVariableDefs.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_GlobalVariableDefs.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Gpio.obj: ../TI/F2837xD_Gpio.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Gpio.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_I2C.obj: ../TI/F2837xD_I2C.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_I2C.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Ipc.obj: ../TI/F2837xD_Ipc.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Ipc.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Ipc_Driver.obj: ../TI/F2837xD_Ipc_Driver.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Ipc_Driver.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Ipc_Driver_Lite.obj: ../TI/F2837xD_Ipc_Driver_Lite.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Ipc_Driver_Lite.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Ipc_Driver_Util.obj: ../TI/F2837xD_Ipc_Driver_Util.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Ipc_Driver_Util.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Mcbsp.obj: ../TI/F2837xD_Mcbsp.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Mcbsp.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_PieCtrl.obj: ../TI/F2837xD_PieCtrl.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_PieCtrl.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_PieVect.obj: ../TI/F2837xD_PieVect.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_PieVect.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Sci.obj: ../TI/F2837xD_Sci.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Sci.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Spi.obj: ../TI/F2837xD_Spi.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Spi.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_SysCtrl.obj: ../TI/F2837xD_SysCtrl.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_SysCtrl.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_Upp.obj: ../TI/F2837xD_Upp.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_Upp.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_sci_io.obj: ../TI/F2837xD_sci_io.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_sci_io.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_sdfm_drivers.obj: ../TI/F2837xD_sdfm_drivers.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_sdfm_drivers.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_struct.obj: ../TI/F2837xD_struct.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_struct.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+TI/F2837xD_usDelay.obj: ../TI/F2837xD_usDelay.asm $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O3 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.2/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="TI/F2837xD_usDelay.pp" --obj_directory="TI" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+
