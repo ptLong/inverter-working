@@ -154,13 +154,12 @@ __interrupt void epwm1_isr(void)
 		EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
 
 
-//		CTRL_SinCycleState_e current_state, next_state;
-//
-//		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
-		CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+		CTRL_SinCycleState_e current_state, next_state;
 
-//		if(current_state != next_state)
-		if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
+		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
+		next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+
+		if(current_state != next_state)
 		{
 			CTRL_doChangeSinCycleState(ctrlHandle, next_state);
 //			GPIO_toggle(GPIO_LED_BLUE);

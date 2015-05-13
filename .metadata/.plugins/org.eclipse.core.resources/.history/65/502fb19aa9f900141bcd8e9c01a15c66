@@ -98,6 +98,7 @@ void main()
 	while(1)
 	{
 
+
 		{
 			CTRL_SinCycleState_e current_state, next_state;
 
@@ -113,23 +114,6 @@ void main()
 
 		 	gMainPWM_Phase2Shift = MATH_ONE_OVER_THREE * gMainPWM_Period;
 		 	gMainPWM_Phase3Shift = MATH_TWO_OVER_THREE * gMainPWM_Period;
-
-
-		}
-		{
-			EPwm1Regs.DBRED = gMainPWM_RED;
-			EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-			EPwm2Regs.DBRED = gMainPWM_RED;
-			EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-			EPwm3Regs.DBRED = gMainPWM_RED;
-			EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
-
-			EPwm1Regs.DBFED = gMainPWM_FED;
-			EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
-			EPwm2Regs.DBFED = gMainPWM_FED;
-			EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
-			EPwm3Regs.DBFED = gMainPWM_FED;
-			EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
 		}
 
 		PWM_update_scale_factor_optimizer();
@@ -145,30 +129,44 @@ __interrupt void epwm1_isr(void)
 
 	static uint16_t counter=0;
 
-//	if(counter++ == 2){
-//		counter = 0;
+	if(counter++ == 2){
+		counter = 0;
 
 		EPwm1Regs.CMPA.all= gMainPWM_Compare;
 		EPwm1Regs.TBPRD   = gMainPWM_Period;
+
+		EPwm1Regs.DBRED = gMainPWM_RED;
+		EPwm1Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+		EPwm2Regs.DBRED = gMainPWM_RED;
+		EPwm2Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+		EPwm3Regs.DBRED = gMainPWM_RED;
+		EPwm3Regs.DBREDHR.bit.DBREDHR = gMainPWM_REDHR;
+
+		EPwm1Regs.DBFED = gMainPWM_FED;
+		EPwm1Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+		EPwm2Regs.DBFED = gMainPWM_FED;
+		EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+		EPwm3Regs.DBFED = gMainPWM_FED;
+		EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+
 		EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
 		EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
 
 
-//		CTRL_SinCycleState_e current_state, next_state;
-//
-//		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
-		CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+		CTRL_SinCycleState_e current_state, next_state;
 
-//		if(current_state != next_state)
-		if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
+		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
+		next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+
+		if(current_state != next_state)
 		{
 			CTRL_doChangeSinCycleState(ctrlHandle, next_state);
-//			GPIO_toggle(GPIO_LED_BLUE);
+			GPIO_toggle(GPIO_LED_BLUE);
 		}
 
 
 
-//	}
+	}
 
 	GPIO_setLow(GPIO_LED_BLUE);
 
@@ -183,8 +181,6 @@ __interrupt void epwm1_isr(void)
 
 __interrupt void cpu_timer2_isr(void)
 {
-
-
 	GPIO_setHigh(GPIO_LED_WHITE);
 
 

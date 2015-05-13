@@ -5,7 +5,8 @@
 'Building file: ../main.c'
 'Invoking: C2000 Compiler'
 "E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O2 --opt_for_speed=5 --include_path="E:/ti/ccs6/ccsv6/tools/compiler/ti-cgt-c2000_6.4.4/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_headers/include" --include_path="E:/ti/controlSUITEMay08/device_support/F2837xD/v150/F2837xD_common/include" -g --define=CPU1 --diag_warning=225 --display_error_number --diag_suppress=10063 --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
-"../main.c", line 103: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 102: warning #552-D: variable "next_state" was set but never used
+"../main.c", line 146: warning #179-D: variable "counter" was declared but never referenced
 'Finished building: ../main.c'
 ' '
 'Building target: oit-inverter-final.out'

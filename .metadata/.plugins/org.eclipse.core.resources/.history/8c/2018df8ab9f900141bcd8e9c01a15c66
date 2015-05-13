@@ -157,10 +157,10 @@ __interrupt void epwm1_isr(void)
 //		CTRL_SinCycleState_e current_state, next_state;
 //
 //		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
-		CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+//		next_state    = CTRL_getNextSinCycleState(ctrlHandle);
 
 //		if(current_state != next_state)
-		if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
+		if(CTRL_getCurrentSinCycleState(ctrlHandle) != CTRL_getNextSinCycleState(ctrlHandle))
 		{
 			CTRL_doChangeSinCycleState(ctrlHandle, next_state);
 //			GPIO_toggle(GPIO_LED_BLUE);
