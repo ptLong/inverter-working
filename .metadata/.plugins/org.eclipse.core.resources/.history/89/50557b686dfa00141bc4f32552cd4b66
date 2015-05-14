@@ -139,7 +139,7 @@ extern "C" {
 typedef struct _MATH_vec2_
 {
 
-	float_t  value[2];
+  float_t  value[2];
 
 } MATH_vec2;
 
@@ -149,7 +149,7 @@ typedef struct _MATH_vec2_
 typedef struct _MATH_vec3_
 {
 
-	float_t  value[3];
+  float_t  value[3];
 
 } MATH_vec3;
 
@@ -161,15 +161,15 @@ typedef struct _MATH_vec3_
 //! \return    The absolute value
 static inline float_t MATH_abs(const float_t in)
 {
-	float_t out = in;
+  float_t out = in;
 
 
-	if(in < 0.0)
-	{
-		out = -in;
-	}
+  if(in < 0.0)
+    {
+      out = -in;
+    }
 
-	return(out);
+  return(out);
 } // end of MATH_abs() function
 
 
@@ -179,24 +179,24 @@ static inline float_t MATH_abs(const float_t in)
 //! \return    The incremented angle value, rad
 static inline float_t MATH_incrAngle(const float_t angle_rad,const float_t angleDelta_rad)
 {
-	float_t angleNew_rad;
+  float_t angleNew_rad;
 
 
-	// increment the angle
-	angleNew_rad = angle_rad + angleDelta_rad;
+  // increment the angle
+  angleNew_rad = angle_rad + angleDelta_rad;
 
 
-	// check for limits
-	if(angleNew_rad > MATH_PI)
-	{
-		angleNew_rad -= MATH_TWO_PI;
-	}
-	else if(angleNew_rad < (-MATH_PI))
-	{
-		angleNew_rad += MATH_TWO_PI;
-	}
+  // check for limits
+  if(angleNew_rad > MATH_PI)
+    {
+      angleNew_rad -= MATH_TWO_PI;
+    }
+  else if(angleNew_rad < (-MATH_PI))
+    {
+      angleNew_rad += MATH_TWO_PI;
+    }
 
-	return(angleNew_rad);
+  return(angleNew_rad);
 } // end of MATH_incrAngle() function
 
 
@@ -207,19 +207,19 @@ static inline float_t MATH_incrAngle(const float_t angle_rad,const float_t angle
 //! \return    The saturated value
 static inline float_t MATH_sat(const float_t in,const float_t max,const float_t min)
 {
-	float_t out = in;
+  float_t out = in;
 
 
-	if(in < min)
-	{
-		out = min;
-	}
-	else if(in > max)
-	{
-		out = max;
-	}
+  if(in < min)
+    {
+      out = min;
+    }
+  else if(in > max)
+    {
+      out = max;
+    }
 
-	return(out);
+  return(out);
 } // end of MATH_sat() function
 
 // **************************************************************************

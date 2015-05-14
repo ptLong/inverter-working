@@ -172,7 +172,7 @@ void PIE_to_default_settings(void)
 	PieVectTable.ADCB_EVT_INT = &adcb_ppb_isr;
 	//PieVectTable.ADCA1_INT = &main_isr;
 
-//	PieVectTable.EPWM1_INT = &epwm1_isr;
+	PieVectTable.EPWM1_INT = &epwm1_isr;
 
 	//Enable ADC1 interrupt at the group and subgroup levels
 	//PieCtrlRegs.PIEIER1.bit.INTx1 = 1;

@@ -120,10 +120,7 @@ __interrupt void cpu_timer2_isr(void)
 {
 
 
-
 	GPIO_setHigh(GPIO_LED_WHITE);
-
-//========= do the job according to state and next state
 
 	CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
 	CTRL_SinCycleState_e current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
@@ -136,8 +133,6 @@ __interrupt void cpu_timer2_isr(void)
 //			GPIO_toggle(GPIO_LED_BLUE);
 		current_state = next_state;
 	}
-
-
 
  	if(current_state == CTRL_SinCycleState_Positive){
  		gMainPWM_Period = gMainPWM_PeriodLong;
@@ -174,7 +169,10 @@ __interrupt void cpu_timer2_isr(void)
 
 
 
-//================ managing state changes
+
+
+
+
 
 	static uint16_t line_freq_cnt = 0;
 	if(line_freq_cnt++ == 166){

@@ -172,7 +172,7 @@ void PIE_to_default_settings(void)
 	PieVectTable.ADCB_EVT_INT = &adcb_ppb_isr;
 	//PieVectTable.ADCA1_INT = &main_isr;
 
-//	PieVectTable.EPWM1_INT = &epwm1_isr;
+	PieVectTable.EPWM1_INT = &epwm1_isr;
 
 	//Enable ADC1 interrupt at the group and subgroup levels
 	//PieCtrlRegs.PIEIER1.bit.INTx1 = 1;
@@ -202,10 +202,10 @@ void PIE_to_default_settings(void)
 	PieCtrlRegs.PIEIER10.bit.INTx5 = 1;
 
 
-	//	// Enable CPU INT3 which is connected to EPWM1-3 INT:
-	//	IER |= M_INT3;
-	//	// Enable EPWM INTn in the PIE: Group 3 interrupt 1-3
-	//	PieCtrlRegs.PIEIER3.bit.INTx1 = 1;
+//	// Enable CPU INT3 which is connected to EPWM1-3 INT:
+//	IER |= M_INT3;
+//	// Enable EPWM INTn in the PIE: Group 3 interrupt 1-3
+//	PieCtrlRegs.PIEIER3.bit.INTx1 = 1;
 
 
 
@@ -277,8 +277,8 @@ void PWM_config_default(volatile struct EPWM_REGS *obj, uint16_t period)
 
 	obj->AQCTLA.bit.ZRO = AQ_SET;               // PWM toggle high/low
 	obj->AQCTLA.bit.CAU = AQ_CLEAR;
-	//	obj->AQCTLB.bit.ZRO = AQ_SET;
-	//	obj->AQCTLB.bit.CBU = AQ_CLEAR;
+//	obj->AQCTLB.bit.ZRO = AQ_SET;
+//	obj->AQCTLB.bit.CBU = AQ_CLEAR;
 
 	obj->DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;
 	obj->DBCTL.bit.POLSEL = DB_ACTV_HIC;
@@ -300,10 +300,10 @@ void PWM_config_default(volatile struct EPWM_REGS *obj, uint16_t period)
 	obj->HRCNFG2.bit.EDGMODEDB = 0x3;		// MEP control of both edge
 
 
-	//##############
+//##############
 	// Chip bug: Must turn off HR period control or HR will not work.
-	//	obj->HRPCTL.bit.HRPE = 1;                  // Turn on high-resolution period control.
-	//
+//	obj->HRPCTL.bit.HRPE = 1;                  // Turn on high-resolution period control.
+//
 	//CpuSysRegs.PCLKCR0.bit.TBCLKSYNC = 1;           // Enable TBCLK within the EPWM
 	obj->TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
 	EDIS;
@@ -402,10 +402,10 @@ void GPIO_to_default_settings(void)
 	GpioCtrlRegs.GPAPUD.bit.GPIO7 = 1;    // Disable pull-up on GPIO7 (EPWM4B)
 	GpioCtrlRegs.GPAMUX1.bit.GPIO6 = 1;   // Configure GPIO6 as EPWM4A
 	GpioCtrlRegs.GPAMUX1.bit.GPIO7 = 1;   // Configure GPIO7 as EPWM4B
-	//	GPIO_SetupPinMux(GPIO_LOWFREQMOSFET_HIGH, GPIO_MUX_CPU1, 0);
-	//	GPIO_SetupPinOptions(GPIO_LOWFREQMOSFET_HIGH, GPIO_OUTPUT, GPIO_PUSHPULL);
-	//	GPIO_SetupPinMux(GPIO_LOWFREQMOSFET_LOW, GPIO_MUX_CPU1, 0);
-	//	GPIO_SetupPinOptions(GPIO_LOWFREQMOSFET_LOW, GPIO_OUTPUT, GPIO_PUSHPULL);
+//	GPIO_SetupPinMux(GPIO_LOWFREQMOSFET_HIGH, GPIO_MUX_CPU1, 0);
+//	GPIO_SetupPinOptions(GPIO_LOWFREQMOSFET_HIGH, GPIO_OUTPUT, GPIO_PUSHPULL);
+//	GPIO_SetupPinMux(GPIO_LOWFREQMOSFET_LOW, GPIO_MUX_CPU1, 0);
+//	GPIO_SetupPinOptions(GPIO_LOWFREQMOSFET_LOW, GPIO_OUTPUT, GPIO_PUSHPULL);
 
 
 	// PWM6A GPIO10 for controling load test
@@ -413,11 +413,11 @@ void GPIO_to_default_settings(void)
 	GpioCtrlRegs.GPAMUX1.bit.GPIO10 = 1;   // Configure GPIO10 as EPWM6A
 
 	// PWM7B (LED), 8A (LED), 8B for other purposes
-	//	GpioCtrlRegs.GPAPUD.bit.GPIO13 = 1;    // Disable pull-up on GPIO13 (EPWM7B)
-	//	GpioCtrlRegs.GPAMUX1.bit.GPIO13 = 1;   // Configure GPIO13 as EPWM7B
-	//
-	//	GpioCtrlRegs.GPAPUD.bit.GPIO14 = 1;    // Disable pull-up on GPIO14 (EPWM8A)
-	//	GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 1;   // Configure GPIO14 as EPWM8A
+//	GpioCtrlRegs.GPAPUD.bit.GPIO13 = 1;    // Disable pull-up on GPIO13 (EPWM7B)
+//	GpioCtrlRegs.GPAMUX1.bit.GPIO13 = 1;   // Configure GPIO13 as EPWM7B
+//
+//	GpioCtrlRegs.GPAPUD.bit.GPIO14 = 1;    // Disable pull-up on GPIO14 (EPWM8A)
+//	GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 1;   // Configure GPIO14 as EPWM8A
 
 	GPIO_SetupPinMux(GPIO_LED_BLUE, GPIO_MUX_CPU1, 0);
 	GPIO_SetupPinOptions(GPIO_LED_BLUE, GPIO_OUTPUT, GPIO_PUSHPULL);

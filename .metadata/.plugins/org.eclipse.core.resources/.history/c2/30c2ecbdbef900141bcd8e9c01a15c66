@@ -67,7 +67,7 @@ CTRL_Handle ctrlHandle;
 uint32_t gMainPWM_Compare = 0;
 uint16_t gMainPWM_Period = 667;
 uint16_t gMainPWM_PeriodLong = 667;
-uint16_t gMainPWM_PeriodShort = 80;
+uint16_t gMainPWM_PeriodShort = 80
 uint16_t gMainPWM_Phase2Shift = 0;
 uint16_t gMainPWM_Phase3Shift = 0;
 uint16_t gMainPWM_RED     = 3;
@@ -116,14 +116,54 @@ void main()
 }
 
 
+
+__interrupt void epwm1_isr(void)
+{
+
+
+	static uint16_t counter=0;
+
+//	if(counter++ == 2){
+//		counter = 0;
+		GPIO_setHigh(GPIO_LED_BLUE);
+		EPwm1Regs.CMPA.all= gMainPWM_Compare;
+		EPwm1Regs.TBPRD   = gMainPWM_Period;
+		EPwm2Regs.TBPHS.bit.TBPHS = gMainPWM_Phase2Shift;
+		EPwm3Regs.TBPHS.bit.TBPHS = gMainPWM_Phase3Shift;
+
+
+//		CTRL_SinCycleState_e current_state, next_state;
+//
+//		current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
+		CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
+
+//		if(current_state != next_state)
+		if(CTRL_getCurrentSinCycleState(ctrlHandle) != next_state)
+		{
+			CTRL_doChangeSinCycleState(ctrlHandle, next_state);
+//			GPIO_toggle(GPIO_LED_BLUE);
+		}
+
+		GPIO_setHigh(GPIO_LED_BLUE);
+
+//	}
+
+	GPIO_setLow(GPIO_LED_BLUE);
+
+	// Clear INT flag for this timer
+	EPwm1Regs.ETCLR.bit.INT = 1;
+
+	// Acknowledge this interrupt to receive more interrupts from group 3
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP3;
+
+
+}
+
 __interrupt void cpu_timer2_isr(void)
 {
 
 
-
 	GPIO_setHigh(GPIO_LED_WHITE);
-
-//========= do the job according to state and next state
 
 	CTRL_SinCycleState_e next_state    = CTRL_getNextSinCycleState(ctrlHandle);
 	CTRL_SinCycleState_e current_state = CTRL_getCurrentSinCycleState(ctrlHandle);
@@ -136,8 +176,6 @@ __interrupt void cpu_timer2_isr(void)
 //			GPIO_toggle(GPIO_LED_BLUE);
 		current_state = next_state;
 	}
-
-
 
  	if(current_state == CTRL_SinCycleState_Positive){
  		gMainPWM_Period = gMainPWM_PeriodLong;
@@ -174,26 +212,68 @@ __interrupt void cpu_timer2_isr(void)
 
 
 
-//================ managing state changes
+
+
+
+
 
 	static uint16_t line_freq_cnt = 0;
+
 	if(line_freq_cnt++ == 166){
 		line_freq_cnt = 0;
+
 		//EPwm1Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
 	}
 
 	switch (line_freq_cnt) {
 	case 0: //begin of positive cycle
 		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Positive);
+//		CTRL_doChangeSinCycleState(ctrlHandle, CTRL_SinCycleState_Positive);
 
 		break;
 	case 83: //begin of negative cycle
 		CTRL_setNextSinCycleState(ctrlHandle, CTRL_SinCycleState_Negative);
+//		CTRL_doChangeSinCycleState(ctrlHandle, CTRL_SinCycleState_Negative);
 
 		break;
 	default:
 		break;
 	}
+
+
+//	if(line_freq_cnt < 83){
+////		EPwm4Regs.CMPA.all = 0;
+//
+//		EPwm1Regs.CMPA.bit.CMPA = ( 0.1 *EPwm1Regs.TBPRD );
+//
+//
+//	}else{
+//		EPwm4Regs.CMPA.all = (uint32_t)0xffff << 16;
+//
+//		EPwm1Regs.CMPA.bit.CMPA = ( 0.9 *EPwm1Regs.TBPRD );
+//	}
+
+
+
+
+
+//   if(CpuTimer2.InterruptCount == 99999){
+//	   CpuTimer2.InterruptCount = 0;
+//	   GPIO_toggle(LED2);
+//   }else{
+//	   CpuTimer2.InterruptCount++;
+//   }
+
+
+	//read_adc_data();
+	//control_output_voltage();
+
+
+//	if(gLEDcnt++ > (uint_least32_t)MAIN_ISR_FREQ_KHZ*1000/LED_BLINK_FREQ_HZ)
+//	{
+//		//GPIO_toggle(LED1);
+//		gLEDcnt=0;
+//	}
 
 
 	GPIO_setLow(GPIO_LED_WHITE);

@@ -137,8 +137,6 @@ __interrupt void cpu_timer2_isr(void)
 		current_state = next_state;
 	}
 
-
-
  	if(current_state == CTRL_SinCycleState_Positive){
  		gMainPWM_Period = gMainPWM_PeriodLong;
  		gMainPWM_Compare =  gScaleLow *((uint32_t)gMainPWM_Period << 16);
@@ -169,6 +167,9 @@ __interrupt void cpu_timer2_isr(void)
 	EPwm2Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
 	EPwm3Regs.DBFED = gMainPWM_FED;
 	EPwm3Regs.DBFEDHR.bit.DBFEDHR = gMainPWM_FEDHR;
+
+
+
 
 
 
